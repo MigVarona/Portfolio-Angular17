@@ -2,12 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Website</title>
+ 
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RBTNEYG68E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-RBTNEYG68E');
+  </script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/css/uikit.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:300' rel='stylesheet' type='text/css'>
+  
+    
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="../src/styles.css">
+    <style>
+      .custom-link {
+        text-decoration: underline !important;
+        color: black !important;
+  
+      }
+    </style>
+  
+    <title>Miguel Varona Web developer</title>
 </head>
 <body>
   <app-root></app-root>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit-icons.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+  <script>
+    window.onload = function () {
+      const images = document.querySelectorAll(".fade-in");
+
+      const options = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5
+      };
+
+      const observer = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            observer.unobserve(entry.target);
+          }
+        });
+      }, options);
+
+      images.forEach(image => {
+        observer.observe(image);
+      });
+    };
+  </script>
 </body>
 </html>
