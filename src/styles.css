@@ -25,12 +25,12 @@ button {
   button:hover {
     transform: translateY(-4px) translateX(-2px);
     box-shadow: 2px 5px 0 0 black;
-  };
+  }
   
   button:active {
     transform: translateY(2px) translateX(1px);
     box-shadow: 0 0 0 0 black;
-  };
+  }
 
 
   
@@ -44,9 +44,7 @@ button {
       transform: scale3d(0.3, 0.3, 0.3);
     }
   
-    50% {
-      opacity: 1;
-    }
+  
   }
   
   @keyframes zoomIn {
@@ -56,9 +54,7 @@ button {
       transform: scale3d(0.3, 0.3, 0.3);
     }
   
-    50% {
-      opacity: 1;
-    }
+ 
   }
   
   .zoomIn {
