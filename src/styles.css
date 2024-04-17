@@ -136,10 +136,15 @@ button {
     line-height: 1.5;
     font-size: 14px;
   }
+
+  @media screen and (max-width: 600px) {
+    .field input {
+      min-width: 300px; /* Ancho mínimo ajustado para pantallas pequeñas */
+    }
+  }
   
   input[type="submit"] {
     display: block;
-    padding: 6px 30px;
     font-size: 14px;
     background-color: #4460AA;
     color: #fff;
