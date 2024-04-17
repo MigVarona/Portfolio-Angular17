@@ -139,7 +139,7 @@ button {
 
   @media screen and (max-width: 600px) {
     .field input {
-      min-width: 300px; /* Ancho mínimo ajustado para pantallas pequeñas */
+      min-width: 300px; 
     }
   }
   
