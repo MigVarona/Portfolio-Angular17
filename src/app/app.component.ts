@@ -7,6 +7,9 @@ import { ProjectsComponent } from './projects/projects.component';
 import { FooterComponent } from './footer/footer.component';
 import { inject } from "@vercel/analytics"
 
+inject();
+
+
 @Component({
   selector: 'app-root',
   standalone: true,
