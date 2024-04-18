@@ -1,44 +1,46 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
- 
+
   <base href="/">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RBTNEYG68E"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-  
+
     gtag('config', 'G-RBTNEYG68E');
   </script>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link rel="stylesheet"  type="text/css" href="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/css/uikit.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:300' rel='stylesheet' type='text/css'>
-  
-    
-    
-    <link rel="stylesheet" type="css" href="../src/styles.css">
-    <style>
-      .custom-link {
-        text-decoration: underline !important;
-        color: black !important;
-  
-      }
-    </style>
-  
-    <title>Miguel Varona Front-end Developer</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/css/uikit.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:300' rel='stylesheet' type='text/css'>
+
+
+
+  <link rel="stylesheet" type="css" href="../src/styles.css">
+  <style>
+    .custom-link {
+      text-decoration: underline !important;
+      color: black !important;
+
+    }
+  </style>
+
+  <title>Miguel Varona Front-end Developer</title>
 </head>
+
 <body>
   <app-root></app-root>
-  
+
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit-icons.min.js"></script>
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 
   <script>
@@ -64,40 +66,38 @@
         observer.observe(image);
       });
     };
+</script>
+  <script>
+    const btn = document.getElementById('button');
+    const form = document.getElementById('form');
 
-  
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      btn.value = 'Sending...';
+
+      const serviceID = 'default_service';
+      const templateID = 'template_ukuog1i';
+
+      emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+          btn.value = 'Send Email';
+
+          const successMessage = 'Your email has been sent successfully!';
+          alert(successMessage);
+          form.reset();
+        }, (err) => {
+          btn.value = 'Send Email';
+          alert(JSON.stringify(err));
+        });
+    });
   </script>
-<script>
-  const btn = document.getElementById('button');
-  const form = document.getElementById('form');
 
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-    btn.value = 'Sending...';
-
-    const serviceID = 'default_service';
-    const templateID = 'template_ukuog1i';
-
-    emailjs.sendForm(serviceID, templateID, this)
-      .then(() => {
-        btn.value = 'Send Email';
-        // Customizing the success message
-        const successMessage = 'Your email has been sent successfully!';
-        alert(successMessage);
-        form.reset(); 
-      }, (err) => {
-        btn.value = 'Send Email';
-        alert(JSON.stringify(err));
-      });
-  });
-</script>
-  
-  <script type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script type="text/javascript">
-  emailjs.init('OfRKJQc69jH31U0Wr')
-</script>
+  <script type="text/javascript">
+    emailjs.init('OfRKJQc69jH31U0Wr')
+  </script>
 </body>
+
 </html>
