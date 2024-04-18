@@ -67,29 +67,31 @@
 
   
   </script>
-  <script>
-    const btn = document.getElementById('button');
-    const form = document.getElementById('form');
-  
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-  
-      btn.value = 'Sending...';
-  
-      const serviceID = 'default_service';
-      const templateID = 'template_ukuog1i';
-  
-      emailjs.sendForm(serviceID, templateID, this)
-        .then(() => {
-          btn.value = 'Send Email';
-          alert('Sent!');
-          form.reset(); // Esto restablecerá el formulario
-        }, (err) => {
-          btn.value = 'Send Email';
-          alert(JSON.stringify(err));
-        });
-    });
-  </script>
+<script>
+  const btn = document.getElementById('button');
+  const form = document.getElementById('form');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    btn.value = 'Sending...';
+
+    const serviceID = 'default_service';
+    const templateID = 'template_ukuog1i';
+
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        btn.value = 'Send Email';
+        // Customizing the success message
+        const successMessage = 'Your email has been sent successfully!';
+        alert(successMessage);
+        form.reset(); 
+      }, (err) => {
+        btn.value = 'Send Email';
+        alert(JSON.stringify(err));
+      });
+  });
+</script>
   
   <script type="text/javascript"
   src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
