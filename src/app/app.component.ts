@@ -6,6 +6,12 @@ import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { FooterComponent } from './footer/footer.component';
 import { inject } from "@vercel/analytics"
+import { BackendService } from './backend.service';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
+
 
 inject();
 
@@ -13,9 +19,10 @@ inject();
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ContactUsComponent, HeaderComponent, AboutComponent, ProjectsComponent, FooterComponent ],
+  imports: [RouterOutlet, ContactUsComponent, HeaderComponent, AboutComponent, ProjectsComponent, FooterComponent,HttpClientModule, ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  providers: [BackendService,  ] 
 })
 export class AppComponent {
   title = 'website';
