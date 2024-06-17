@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { inject } from "@vercel/analytics"
 import { BackendService } from './backend.service';
 import { HttpClientModule } from '@angular/common/http';
+import { EmailService } from './email.service';
+
 
 
 
@@ -22,7 +24,7 @@ inject();
   imports: [RouterOutlet, ContactUsComponent, HeaderComponent, AboutComponent, ProjectsComponent, FooterComponent,HttpClientModule, ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  providers: [BackendService,  ] 
+  providers: [BackendService, EmailService  ] 
 })
 export class AppComponent {
   title = 'website';

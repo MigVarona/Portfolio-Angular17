@@ -1,5 +1,4 @@
-<div
-  class="grid fade-in sm:grid-cols-2 items-center gap-16 p-8 mx-auto max-w-7xl bg-white shadow-lg rounded-lg text-[#333] font-[sans-serif]">
+<div class="grid fade-in sm:grid-cols-2 items-center gap-16 p-8 mx-auto max-w-7xl bg-white shadow-lg rounded-lg text-[#333] font-[sans-serif]">
   <div>
     <h1 class="text-3xl font-extrabold">Let's Talk</h1>
     <p class="text-sm text-gray-400 mt-3">Have some big idea or brand to develop and need help? Then reach out we'd
@@ -23,7 +22,6 @@
     <div class="mt-12">
       <h2 class="text-lg font-extrabold">Socials</h2>
       <ul class="flex mt-3 space-x-4">
-
         <a href="https://www.linkedin.com/in/miguelvaronagallego/" class="flex items-center">
           <span uk-icon="icon: linkedin; ratio: 2"></span>
         </a>
@@ -36,20 +34,26 @@
     </div>
   </div>
   <div class="relative mx-auto max-w-7xl">
-    <form id="form" class="ml-auto space-y-4 max-w-xl mx-auto">
-      <div class="field">
-        <input type="text" placeholder="Name" name="to_name" id="to_name"
-          class="w-full lg:w-1/2 rounded-md py-2.5 px-4 border text-sm outline-[#007bff]">
-      </div>
-      <div class="field">
-        <input type="email" placeholder="Email" name="reply_to" id="reply_to"
-          class="w-full lg:w-1/2 rounded-md py-2.5 px-4 border text-sm outline-[#007bff]">
-      </div>
-      <div class="field">
-        <textarea placeholder="Message" rows="6" name="message" id="message"
-          class="w-full rounded-md px-4 border text-sm pt-2.5 outline-[#007bff]"></textarea>
-      </div>
-      <button type="submit" id="button"
-        class="text-white bg-slate-900 hover:bg-slate-600 font-semibold rounded-md text-sm px-4 py-2.5 w-full">Send</button>
-    </form>
+    <div class="relative mx-auto max-w-7xl">
+      <form (ngSubmit)="sendEmail()" class="ml-auto space-y-4 max-w-xl mx-auto">
+        <div class="field">
+          <input type="text" placeholder="Name" id="name" [(ngModel)]="name" name="name"
+            class="w-full lg:w-1/2 rounded-md py-2.5 px-4 border text-sm outline-[#007bff]" required>
+        </div>
+        <div class="field">
+          <input type="email" placeholder="Email" id="email" [(ngModel)]="email" name="email"
+            class="w-full lg:w-1/2 rounded-md py-2.5 px-4 border text-sm outline-[#007bff]" required>
+        </div>
+        <div class="field">
+          <textarea placeholder="Message" id="message" [(ngModel)]="message" name="message" rows="6"
+            class="w-full rounded-md px-4 border text-sm pt-2.5 outline-[#007bff]" required></textarea>
+        </div>
+        <button type="submit" class="text-white bg-slate-900 hover:bg-slate-600 font-semibold rounded-md text-sm px-4 py-2.5 w-full">Send</button>
+      </form>
+    </div>
+    
   </div>
+  
+  
+  
+</div>
