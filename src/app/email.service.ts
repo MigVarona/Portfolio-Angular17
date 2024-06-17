@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class EmailService {
-  private apiUrl = 'https://backflask.onrender.com/send-email';
+  private apiUrl = 'https://backflask.adaptable.app/send-email';
 
   constructor(private http: HttpClient) {}
 

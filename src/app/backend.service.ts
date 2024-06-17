@@ -13,7 +13,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class BackendService {
 
-  private baseUrl = 'https://backflask.onrender.com'; 
+  private baseUrl = 'https://backflask.adaptable.app'; 
 
   constructor(private http: HttpClient) { }
 
