@@ -1,43 +1,42 @@
 import { Component } from '@angular/core';
 import { EmailService } from '../email.service';
 import { FormsModule } from '@angular/forms';
-
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
+  imports: [FormsModule, CommonModule],  // Asegúrate de incluir CommonModule aquí
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',
-  styleUrls: ['./contact-us.component.css'],
-  imports: [
-    FormsModule
-  ]
+  styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent {
   name: string = '';
   email: string = '';
   message: string = '';
+  responseMessage: string = '';
+  isSuccess: boolean = true;
 
   constructor(private emailService: EmailService) {}
 
   sendEmail() {
-    if (!this.name || !this.email || !this.message) {
-      console.error('Please fill out all fields');
-      return;
-    }
-
     this.emailService.sendEmail(this.name, this.email, this.message)
       .subscribe(
         response => {
+          this.responseMessage = 'Email sent successfully';
+          this.isSuccess = true;
           console.log('Email sent successfully', response);
-          // Aquí podrías agregar lógica adicional si necesitas manejar la respuesta
+          this.resetForm();  // Restablecer el formulario después de un envío exitoso
         },
         error => {
+          this.responseMessage = 'Error sending email';
+          this.isSuccess = false;
           console.error('Error sending email', error);
-          // Manejar el error aquí si es necesario
         }
       );
+  }
 
-    // Limpiar los campos después del envío
+  resetForm() {
     this.name = '';
     this.email = '';
     this.message = '';
