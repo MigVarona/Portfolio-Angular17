@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [FormsModule, CommonModule],  // Asegúrate de incluir CommonModule aquí
+  imports: [FormsModule, CommonModule],  
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.css']
@@ -26,7 +26,7 @@ export class ContactUsComponent {
           this.responseMessage = 'Email sent successfully';
           this.isSuccess = true;
           console.log('Email sent successfully', response);
-          this.resetForm();  // Restablecer el formulario después de un envío exitoso
+          this.resetForm();  
         },
         error => {
           this.responseMessage = 'Error sending email';
